@@ -1,42 +1,21 @@
 package com.eliasnorrby.state;
 
 public class Canvas {
-  private ToolType currentTool;
+  private Tool currentTool;
 
   public void mouseDown() {
-    switch (currentTool) {
-      case SELECTION:
-        System.out.println("Selection icon");
-        break;
-      case BRUSH:
-        System.out.println("Brush icon");
-        break;
-      case ERASER:
-        System.out.println("Eraser icon");
-        break;
-    }
+    currentTool.mouseDown();
   }
 
   public void mouseUp() {
-    switch (currentTool) {
-      case SELECTION:
-        System.out.println("Draw dashed rectangle");
-        break;
-      case BRUSH:
-        System.out.println("Draw a line");
-        break;
-      case ERASER:
-        System.out.println("Erase something");
-        break;
-    }
+    currentTool.mouseUp();
   }
 
-  public ToolType getCurrentTool() {
+  public Tool getCurrentTool() {
     return currentTool;
   }
 
-  public void setCurrentTool(ToolType currentTool) {
+  public void setCurrentTool(Tool currentTool) {
     this.currentTool = currentTool;
   }
-
 }
