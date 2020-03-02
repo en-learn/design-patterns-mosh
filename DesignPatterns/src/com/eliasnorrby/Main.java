@@ -6,6 +6,10 @@ import com.eliasnorrby.memento.History;
 public class Main {
 
     public static void main(String[] args) {
+      mementoDemo();
+    }
+
+    public static void mementoDemo() {
       var editor = new Editor();
       var history = new History();
 
