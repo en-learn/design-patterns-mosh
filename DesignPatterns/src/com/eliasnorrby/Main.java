@@ -1,13 +1,16 @@
 package com.eliasnorrby;
 
+import com.eliasnorrby.memento.Editor;
+
 public class Main {
 
     public static void main(String[] args) {
-      drawUIControl(new TextBox());
-      drawUIControl(new CheckBox());
+      var editor = new Editor();
+      editor.setContent("a");
+      editor.setContent("b");
+      editor.setContent("c");
+      editor.undo();
     }
 
-    public static void drawUIControl(UIControl control) {
-      control.draw();
-    }
 }
+
