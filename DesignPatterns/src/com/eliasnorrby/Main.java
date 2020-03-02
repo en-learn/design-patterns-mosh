@@ -5,12 +5,14 @@ import com.eliasnorrby.memento.History;
 import com.eliasnorrby.state.Canvas;
 import com.eliasnorrby.state.EraserTool;
 import com.eliasnorrby.state.SelectionTool;
+import com.eliasnorrby.state.abuse.Stopwatch;
 
 public class Main {
 
     public static void main(String[] args) {
       // mementoDemo();
-      stateDemo();
+      //stateDemo();
+      stateAbuseDemo();
     }
 
     private static void mementoDemo() {
@@ -38,6 +40,13 @@ public class Main {
       canvas.setCurrentTool(new EraserTool());
       canvas.mouseDown();
       canvas.mouseUp();
+    }
+
+    private static void stateAbuseDemo() {
+      var stopwatch = new Stopwatch();
+      stopwatch.click();
+      stopwatch.click();
+      stopwatch.click();
     }
 
 }
