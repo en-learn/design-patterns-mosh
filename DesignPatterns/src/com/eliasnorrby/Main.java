@@ -1,6 +1,7 @@
 package com.eliasnorrby;
 
 import com.eliasnorrby.iterator.BrowseHistory;
+import com.eliasnorrby.iterator.Iterator;
 import com.eliasnorrby.memento.Editor;
 import com.eliasnorrby.memento.History;
 import com.eliasnorrby.state.Canvas;
@@ -57,9 +58,11 @@ public class Main {
       history.push("b");
       history.push("c");
 
-      for (var i = 0; i < history.getUrls().size(); i++) {
-        var url = history.getUrls().get(i);
-        System.out.println(url);
+      var iterator = history.createIterator();
+      while (iterator.hasNext()) {
+        String url = iterator.current();
+        System.out.println("url = " + url);
+        iterator.next();
       }
     }
 }
