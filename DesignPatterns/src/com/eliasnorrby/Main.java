@@ -1,5 +1,6 @@
 package com.eliasnorrby;
 
+import com.eliasnorrby.iterator.BrowseHistory;
 import com.eliasnorrby.memento.Editor;
 import com.eliasnorrby.memento.History;
 import com.eliasnorrby.state.Canvas;
@@ -11,8 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
       // mementoDemo();
-      //stateDemo();
-      stateAbuseDemo();
+      // stateDemo();
+      // stateAbuseDemo();
+      iteratorDemo();
     }
 
     private static void mementoDemo() {
@@ -49,5 +51,16 @@ public class Main {
       stopwatch.click();
     }
 
+    private static void iteratorDemo() {
+      var history = new BrowseHistory();
+      history.push("a");
+      history.push("b");
+      history.push("c");
+
+      for (var i = 0; i < history.getUrls().size(); i++) {
+        var url = history.getUrls().get(i);
+        System.out.println(url);
+      }
+    }
 }
 
